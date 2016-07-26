@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ post.title }} | {% endblock %}
+
+{% block content %}
+<div id="blog-post">
+<h2 id="post-title">{{ post.title }}</h2>
+{{ post.body|linebreaks }}
+<p>{{ post.updated }}</p>
+<a href={% url "blog:list" %}>&larr; Blog list</a>
+</div>
+{% endblock %}
